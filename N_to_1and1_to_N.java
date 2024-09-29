@@ -1,4 +1,4 @@
-package recursionbasic;
+
 import java.util.Scanner;
 
 //printing N to 1 
