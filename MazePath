@@ -1,0 +1,35 @@
+here is a robot on an m // The robot is initially located at the top-left corner (i.e., grid[0][0]). The robot tries to move to the bottom-right corner (i.e., grid[m - 1][n - 1]). The robot can only move either down or right at any point in time.
+//Find Unique Paths
+import java.util.Scanner;
+public class MazePath {
+//	public static int maze(int row,int col,int m,int n) {
+//		if(row==m || col==n) {
+//			return 1;
+//		}
+//		int rightways=maze(row,col+1,m,m);
+//		int downways=maze(row+1,col,m,m);
+//		return rightways + downways;
+//	}
+	
+	////method2:only 2 parameter (m,n) - (1,1)
+	public static int maze2(int m,int n) {
+		if(m== 1|| n==1)
+			return 1;
+		int rightways=maze2(m,n-1);
+		int downways=maze2(m-1,n);
+		return rightways + downways;
+	}
+
+	public static void main(String[] args) {
+		Scanner sc =new Scanner (System.in);
+		System.out.print("Enter the no. of rows:");
+		int m=sc.nextInt();
+		System.out.print("Enter the no. of Columns:");
+		int n=sc.nextInt();
+		//System.out.println(maze(1,1,m,n));   //(1,1) - (m,n)
+		
+		System.out.println(maze2(m,n));
+	
+	}
+
+}
