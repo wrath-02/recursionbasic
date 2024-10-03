@@ -1,0 +1,30 @@
+//Generate a binary string of length n where no consecutive 1 are allowed
+package recursionbasic;
+import java.util.Scanner;
+public class BinaryString {
+	public static void bstring(int n,String ans) {
+		int len=ans.length();
+		if(len==n) {
+			System.out.println(ans);
+			return;
+		}	
+		if(len==0 || ans.charAt(len-1)=='0') {
+			bstring(n,ans+'1');
+			bstring(n,ans+'0');
+		}
+		else {
+			bstring(n,ans+'0');
+			
+		}
+	}
+	
+
+	public static void main(String[] args) {
+		Scanner sc =new Scanner(System.in);
+		System.out.println("Enter the no of terms:");
+		int n=sc.nextInt();
+		bstring(n,"");
+
+	}
+
+}
