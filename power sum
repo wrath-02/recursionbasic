@@ -1,0 +1,29 @@
+
+import java.util.Scanner;
+
+
+public class PowerSum {
+	public static int powe(int x,int n,int num) {
+		int power=(int)Math.pow(num,n);
+		if(power==x)
+			return 1;
+		if(power > x )
+			return 0;
+		
+		return powe(x-power,n,num+1)+ powe(x,n,num+1);
+		
+	}
+
+	public static void main(String[] args) {
+		Scanner sc= new Scanner(System.in);
+		System.out.print("Enter the Sum:");
+		int x=sc.nextInt();
+		System.out.print("Enter the Power:");
+		int n=sc.nextInt();
+		System.out.println(powe(x,n,1));
+		
+		
+	}
+
+}
+// can reduce complexity using memoization;
