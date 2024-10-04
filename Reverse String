@@ -1,0 +1,19 @@
+
+public class ReverseString {
+	public static void rev(String s,String ans) {
+		int len=s.length();
+		if(len==0) {
+			System.out.println(ans);
+			return;
+		}
+		ans=ans+s.charAt(len-1);
+		s = s.substring(0, len - 1);
+		rev(s,ans);
+	}
+
+	public static void main(String[] args) {
+		String s="Anshul Kumar";
+		rev(s,"");
+	}
+
+}
