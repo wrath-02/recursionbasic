@@ -1,0 +1,19 @@
+
+public class MaximumInArray {
+	public static int maximum(int[] arr,int n,int max) {
+		if(n==0) {
+			return max;
+		}
+		
+		if(arr[n-1]>max)
+			max=arr[n-1];
+		return maximum(arr,n-1,max);
+	}
+
+	public static void main(String[] args) {
+		int []arr= {-120,-32,-56,-43,-34,-87,0};
+		int n=arr.length;
+		System.out.println("Maximum Element is "+maximum(arr,n,arr[0]));
+	}
+
+}
