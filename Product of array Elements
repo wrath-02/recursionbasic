@@ -1,0 +1,18 @@
+package recursionbasic;
+
+public class ProductOfArrayElements {
+	public static int product(int []arr,int n) {
+		if(n==0)
+			return 1;
+		return arr[n-1]*product(arr,n-1);
+	}
+	
+
+	public static void main(String[] args) {
+		int []arr= {-1,2,-3,4,4};
+		int n=arr.length;
+		System.out.println("Product of the Elments are "+product(arr,n));
+		
+	}
+
+}
